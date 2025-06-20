@@ -1,7 +1,9 @@
+import { person } from './person.js';
+
 export const documentAsideBar = () => {
   return `<aside class="sidepanel sidepanel--white">
       <a
-        href="https://github.com/Valerii-Hud"
+        href="${person.socials.github}"
         target="_blank"
         class="sidepanel__link"
       >
@@ -18,7 +20,7 @@ export const documentAsideBar = () => {
           />
         </svg>
       </a>
-      <a href="https://t.me/Valerii_Hud" target="_blank" class="sidepanel__link"
+      <a href="${person.socials.telegram}" target="_blank" class="sidepanel__link"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -33,7 +35,7 @@ export const documentAsideBar = () => {
         </svg>
       </a>
       <a
-        href="https://discordapp.com/users/754188336649863178"
+        href="${person.socials.discord}"
         target="_blank"
         class="sidepanel__link"
       >
@@ -95,7 +97,7 @@ export const documentMenu = () => {
           </ul>
         </nav>
         <div class="menu__social">
-          <a href="https://github.com/Valerii-Hud" target="_blank"
+          <a href="${person.socials.github}" target="_blank"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -109,7 +111,7 @@ export const documentMenu = () => {
               />
             </svg>
           </a>
-          <a href="https://t.me/Valerii_Hud" target="_blank">
+          <a href="${person.socials.telegram}" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -124,7 +126,7 @@ export const documentMenu = () => {
             </svg>
           </a>
           <a
-            href="https://discordapp.com/users/754188336649863178"
+            href="${person.socials.discord}"
             target="_blank"
           >
             <svg
@@ -159,8 +161,8 @@ export const documentPromoSection = () => {
         <span class="hamburger_small"></span>
       </div>
       <div class="container">
-        <div class="title title_s promo__subtitle">My name is Valerii Hud</div>
-        <h1 class="title title_xxl promo__title">I am a frontend developer</h1>
+        <div class="title title_s promo__subtitle">My name is ${person.name} ${person.surname}</div>
+        <h1 class="title title_xxl promo__title">I am a ${person.job} </h1>
         <div class="promo__btns">
           <a href="#portfolio_section" class="btn promo__link">Portfolio</a>
           <a
@@ -187,12 +189,7 @@ export const documentAboutSection = () => {
             <div class="title title_xl about__subtitle">My name is Valerii</div>
             <div class="divider"></div>
             <p class="about__text">
-              Hi! My name is Valerii Hud, I am 16 years old and I am a frontend
-              developer. My journey into the world of code began in 2023. I work
-              with HTML, CSS, JavaScript, Gulp, Vite, Git and PostCSS. In the
-              coming year, I plan to master React, Next.js and TypeScript, and
-              then learn the basics of the backend (Node.js, PostgreSQL,
-              MongoDB)
+            ${person.description}
             </p>
           </div>
           <div class="about__skills">
@@ -207,10 +204,7 @@ export const documentAboutSection = () => {
               <div>
                 <div class="title title_xs">Web development</div>
                 <div class="about__skill-text">
-                  I specialize in creating responsive and visually appealing web
-                  interfaces. One of my favorite projects is Monovision Studio,
-                  which stands out for its elegant design and well-thought-out
-                  user interface.
+                 ${person.skills.webdev}
                 </div>
               </div>
             </div>
@@ -225,9 +219,7 @@ export const documentAboutSection = () => {
               <div>
                 <div class="title title_xs">Mobile development</div>
                 <div class="about__skill-text">
-                  Although my main focus is web development, I want to try
-                  mobile development as a hobby in the future, experimenting
-                  with things like React Native to expand my skills.
+                 ${person.skills.mobiledev}
                 </div>
               </div>
             </div>
@@ -242,9 +234,7 @@ export const documentAboutSection = () => {
               <div>
                 <div class="title title_xs">UI/UX Design</div>
                 <div class="about__skill-text">
-                  I also want to learn the basics of UI/UX design to better
-                  understand user experience principles and improve the quality
-                  of my projects.
+                  ${person.skills.uiux}
                 </div>
               </div>
             </div>
@@ -280,15 +270,11 @@ export const documentResumeSection = () => {
                         alt="high school"
                       />
                     </div>
-                    <h4 class="title title_xs">ZSET w Lesznie</h4>
-                    <div class="resume__item-descr">Leszno (from 2023)</div>
+                    <h4 class="title title_xs">${person.education.school.name}</h4>
+                    <div class="resume__item-descr">${person.education.school.whereAndSinceYear}</div>
                   </div>
                   <div class="resume__item-body">
-                    I am learning basic and advanced IT skills including
-                    programming (Python, C++, web development), computer
-                    networks and systems administration, cybersecurity and data
-                    protection fundamentals, hardware and software, and working
-                    with databases and algorithms.
+                   ${person.education.school.description}
                   </div>
                 </div>
               </li>
@@ -298,16 +284,13 @@ export const documentResumeSection = () => {
                     <div class="resume__item-icon">
                       <img src="icons/experience/courses.svg" alt="udemy" />
                     </div>
-                    <h4 class="title title_xs">Udemy</h4>
+                    <h4 class="title title_xs">${person.education.courses.name}</h4>
                     <div class="resume__item-descr">
-                      Web development courses (from 2024)
+                      ${person.education.courses.whereAndSinceYear}
                     </div>
                   </div>
                   <div class="resume__item-body">
-                    I am constantly developing by taking courses on platforms
-                    like Udemy, reading books (like 'JavaScript. A Guide. Learn
-                    the Language of Master Programmers. 7th Edition') and
-                    practicing on projects with mockups in Figma.
+                   ${person.education.courses.description}
                   </div>
                 </div>
               </li>
@@ -324,12 +307,11 @@ export const documentResumeSection = () => {
                     <div class="resume__item-icon">
                       <img src="icons/experience/designer.svg" alt="designer" />
                     </div>
-                    <h4 class="title title_xs">Front-End Developer</h4>
-                    <div class="resume__item-descr">Github (from 2024)</div>
+                    <h4 class="title title_xs">${person.experience.frontend.name}</h4>
+                    <div class="resume__item-descr">${person.experience.frontend.whereAndSinceYear}</div>
                   </div>
                   <div class="resume__item-body">
-                    I develop open source projects, practice creating adaptive
-                    interfaces and study advanced web technologies.
+                    ${person.experience.frontend.description}
                   </div>
                 </div>
               </li>
@@ -339,15 +321,14 @@ export const documentResumeSection = () => {
                     <div class="resume__item-icon">
                       <img
                         src="icons/experience/developer.svg"
-                        alt="frontend developer"
+                        alt="backend developer"
                       />
                     </div>
-                    <h4 class="title title_xs">Back-End Developer</h4>
-                    <div class="resume__item-descr">Github (from 2026)</div>
+                    <h4 class="title title_xs">${person.experience.backend.name}</h4>
+                    <div class="resume__item-descr">${person.experience.backend.whereAndSinceYear}</div>
                   </div>
                   <div class="resume__item-body">
-                    I plan to learn the main technologies for server-side
-                    development, including Node.js, PostgreSQL and MongoDB.
+                    ${person.experience.backend.description}
                   </div>
                 </div>
               </li>
@@ -376,43 +357,36 @@ export const documentSkillsSection = () => {
             <div class="skills__item-header">
               <img src="img/skills/html5.svg" alt="html" />
             </div>
-            <div class="skills__item-title">HTML5</div>
+            <div class="skills__item-title">${person.techStack.html.name}</div>
             <div class="skills__item-body">
-              It is what creates the framework of your website or application,
-              and the fifth version will allow me to create a more SEO-optimized
-              structure for your product.
+            ${person.techStack.html.description}
             </div>
           </div>
           <div class="skills__item">
             <div class="skills__item-header">
               <img src="img/skills/css3.png" alt="css" />
             </div>
-            <div class="skills__item-title">CSS3</div>
+            <div class="skills__item-title">${person.techStack.css.name}</div>
             <div class="skills__item-body">
-              This style language allows me to create absolutely any look for
-              your website or application. The only limit is your imagination!
+            ${person.techStack.css.description}
             </div>
           </div>
           <div class="skills__item">
             <div class="skills__item-header">
               <img src="img/skills/JS.svg" alt="javascript" />
             </div>
-            <div class="skills__item-title">Java Script</div>
+            <div class="skills__item-title">${person.techStack.js.name}</div>
             <div class="skills__item-body">
-              This programming language allows you to animate anything: sliders,
-              windows, tooltips, tabs, receiving data from the server and much
-              more.
+             ${person.techStack.js.description}
             </div>
           </div>
           <div class="skills__item">
             <div class="skills__item-header">
               <img src="img/skills/Jquery.svg" alt="jquery" />
             </div>
-            <div class="skills__item-title">Jquery</div>
+            <div class="skills__item-title">${person.techStack.jquery.name}</div>
             <div class="skills__item-body">
-              The Jquery library will help speed up development. We won't
-              integrate it into the project unless necessary, but we have the
-              skill to work with it.
+            ${person.techStack.jquery.description}
             </div>
           </div>
           <!-- <div class="skills__item">
@@ -450,18 +424,18 @@ export const documentSkillsSection = () => {
           <div class="skills__stat">
             <div class="skills__stat-top">
               <div class="skills__stat">Creation of Front-end</div>
-              <div class="skills__proc">15%</div>
+              <div class="skills__proc">${person.stats.frontend}</div>
             </div>
             <div class="skills__stat-bottom">
               <div class="skills__stat-disable">
-                <div class="skills__stat-active" style="width: 15%"></div>
+                <div class="skills__stat-active"></div>
               </div>
             </div>
           </div>
           <div class="skills__stat">
             <div class="skills__stat-top">
               <div class="skills__stat">Creation of Back-end</div>
-              <div class="skills__proc">2%</div>
+              <div class="skills__proc">${person.stats.backend}</div>
             </div>
             <div class="skills__stat-bottom">
               <div class="skills__stat-disable">
@@ -472,7 +446,7 @@ export const documentSkillsSection = () => {
           <div class="skills__stat">
             <div class="skills__stat-top">
               <div class="skills__stat">Application creation</div>
-              <div class="skills__proc">2%</div>
+              <div class="skills__proc">${person.stats.application}</div>
             </div>
             <div class="skills__stat-bottom">
               <div class="skills__stat-disable">
@@ -483,7 +457,7 @@ export const documentSkillsSection = () => {
           <div class="skills__stat">
             <div class="skills__stat-top">
               <div class="skills__stat">Working with data</div>
-              <div class="skills__proc">1%</div>
+              <div class="skills__proc">${person.stats.data}</div>
             </div>
             <div class="skills__stat-bottom">
               <div class="skills__stat-disable">
@@ -494,7 +468,7 @@ export const documentSkillsSection = () => {
           <div class="skills__stat">
             <div class="skills__stat-top">
               <div class="skills__stat">Creativity</div>
-              <div class="skills__proc">9%</div>
+              <div class="skills__proc">${person.stats.creativity}</div>
             </div>
             <div class="skills__stat-bottom">
               <div class="skills__stat-disable">
@@ -505,7 +479,7 @@ export const documentSkillsSection = () => {
           <div class="skills__stat">
             <div class="skills__stat-top">
               <div class="skills__stat">Soft skills</div>
-              <div class="skills__proc">15%</div>
+              <div class="skills__proc">${person.stats.softSkills}</div>
             </div>
             <div class="skills__stat-bottom">
               <div class="skills__stat-disable">
@@ -533,7 +507,7 @@ export const documentPortfolioSection = () => {
         <div class="divider"></div>
         <div class="portfolio__wrapper">
           <a
-            href="https://ceramic-soul.valerii-hud.com/"
+            href="${person.works.ceramicSoul}"
             class="portfolio__item"
             target="_blank"
           >
@@ -544,7 +518,7 @@ export const documentPortfolioSection = () => {
             />
           </a>
           <a
-            href="https://dezign.valerii-hud.com/"
+            href="${person.works.dezign}"
             class="portfolio__item"
             target="_blank"
           >
@@ -555,14 +529,14 @@ export const documentPortfolioSection = () => {
             />
           </a>
           <a
-            href="https://pulse.valerii-hud.com/"
+            href="${person.works.pulse}"
             class="portfolio__item"
             target="_blank"
           >
             <img src="img/works/pulse.jpg" alt="pulse" class="portfolio__img" />
           </a>
           <a
-            href="https://monovision-studio.valerii-hud.com/"
+            href="${person.works.monovisionStudio}"
             class="portfolio__item vertical"
             target="_blank"
           >
@@ -573,7 +547,7 @@ export const documentPortfolioSection = () => {
             />
           </a>
           <a
-            href="https://cyberpunk.valerii-hud.com/"
+            href="${person.works.cyberpunk}"
             class="portfolio__item"
             target="_blank"
           >
@@ -584,7 +558,7 @@ export const documentPortfolioSection = () => {
             />
           </a>
           <a
-            href="https://create-own-radio.valerii-hud.com/"
+            href="${person.works.createOwnRadio}"
             class="portfolio__item horizontal"
             target="_blank"
           >
@@ -613,74 +587,73 @@ export const documentPriceSection = () => {
           <div class="price__item">
             <div class="price__item-top">
               <div class="price__item-title">
-                Design <span class="price__not-available">Locked</span>
+                ${person.priceList.design.name} <span class="price__not-available">Locked</span>
               </div>
-              <div class="price__item-price">from $20</div>
+              <div class="price__item-price">from ${person.priceList.design.price}</div>
             </div>
             <div class="price__item-descr">
-              My team creates the design of avatar / banner / thumbnail / logo
-              etc...
+            ${person.priceList.design.description} 
             </div>
           </div>
           <div class="price__item">
             <div class="price__item-top">
               <div class="price__item-title">
-                Landing-page
+                ${person.priceList.landingPage.name} 
                 <span class="price__not-available">Locked</span>
               </div>
-              <div class="price__item-price">from $50</div>
+              <div class="price__item-price">from ${person.priceList.landingPage.price}</div>
             </div>
             <div class="price__item-descr">
-              One-page website for presentation of services/products/...
-            </div>
-          </div>
-
-          <div class="price__item">
-            <div class="price__item-top">
-              <div class="price__item-title">
-                Corporate website
-                <span class="price__not-available">Locked</span>
-              </div>
-              <div class="price__item-price">from $200</div>
-            </div>
-            <div class="price__item-descr">
-              Website for your business or company
-            </div>
-          </div>
-          <div class="price__item">
-            <div class="price__item-top">
-              <div class="price__item-title">
-                Android/IOS Application
-                <span class="price__not-available">Locked</span>
-              </div>
-              <div class="price__item-price">from $250</div>
-            </div>
-            <div class="price__item-descr">
-              Application for smartphone of any OS
+              ${person.priceList.landingPage.description}
             </div>
           </div>
 
           <div class="price__item">
             <div class="price__item-top">
               <div class="price__item-title">
-                Web application
+                ${person.priceList.corporateWebsite.name}
                 <span class="price__not-available">Locked</span>
               </div>
-              <div class="price__item-price">from $300</div>
+              <div class="price__item-price">from ${person.priceList.corporateWebsite.price}</div>
             </div>
             <div class="price__item-descr">
-              In-browser app for better comfort
+              ${person.priceList.corporateWebsite.description}  
             </div>
           </div>
           <div class="price__item">
             <div class="price__item-top">
               <div class="price__item-title">
-                Online store
+                ${person.priceList.application.name}
                 <span class="price__not-available">Locked</span>
               </div>
-              <div class="price__item-price">from $340</div>
+              <div class="price__item-price">from ${person.priceList.application.price}</div>
             </div>
-            <div class="price__item-descr">A tool for your online sales</div>
+            <div class="price__item-descr">
+              ${person.priceList.application.description}
+            </div>
+          </div>
+
+          <div class="price__item">
+            <div class="price__item-top">
+              <div class="price__item-title">
+                ${person.priceList.webApplication.name}
+                <span class="price__not-available">Locked</span>
+              </div>
+              <div class="price__item-price">from ${person.priceList.webApplication.price}</div>
+            </div>
+            <div class="price__item-descr">
+              ${person.priceList.webApplication.description}
+            </div>
+          </div>
+          <div class="price__item">
+            <div class="price__item-top">
+              <div class="price__item-title">
+                ${person.priceList.onlineStore.name}
+                <span class="price__not-available">Locked</span>
+              </div>
+              <div class="price__item-price">from ${person.priceList.onlineStore.price}</div>
+            </div>
+            <div class="price__item-descr">${person.priceList.onlineStore.description}</div>
           </div>
         </div>
       </div>
@@ -705,7 +678,7 @@ export const documentContactsSection = () => {
             </div>
             <div class="contacts__social">
               <a
-                href="https://github.com/Valerii-Hud"
+                href="${person.socials.github}"
                 class="contacts__link"
                 target="_blank"
               >
@@ -723,7 +696,7 @@ export const documentContactsSection = () => {
                 </svg>
               </a>
               <a
-                href="https://discordapp.com/users/754188336649863178"
+                href="${person.socials.discord}"
                 class="contacts__link"
                 target="_blank"
               >
@@ -746,7 +719,7 @@ export const documentContactsSection = () => {
                 </svg>
               </a>
               <a
-                href="https://t.me/Valerii_Hud"
+                href="${person.socials.telegram}"
                 class="contacts__link"
                 target="_blank"
               >
